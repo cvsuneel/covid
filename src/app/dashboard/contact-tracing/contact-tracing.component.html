@@ -1,0 +1,128 @@
+<div class="center">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<div class="dashboard_content_section" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="add-new-case-bradcrum-sec">
+        <a href="dashboard" class="router-link-active"><i class="bi bi-chevron-left"></i> Back</a> Dashboard / Case
+        Details - Anna Johnson - Case ID 1246
+    </div>
+    <div class="middile_content">
+        <div class="my_cases_btn_section">
+            <ul>
+                <li><a [routerLink]="['/dashboard/case-details', encodedId ]">Case Details</a></li>
+                <li><a [routerLink]="['/dashboard/contact-tracing', encodedId]"  class="buttonhover" >Contact Tracing</a></li>
+                <li><a [routerLink]="['/dashboard/return-to-work', encodedId]" >Return to Work</a></li>
+                <li><a [routerLink]="['/dashboard/case-history', encodedId]" >Case History</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="addnewcase1-maincontent">
+        <div class="inner-grid-box-shadow" [formGroup]="constactTracingInfo">
+            <div class="lightgreenbox">Add Contact Tracing</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Name *</label>
+                    <input type="text" id="" name="name" placeholder="Enter your name" formControlName="name">
+                    <div *ngIf="contact_tracing_fields['name']?.touched && contact_tracing_fields['name'].errors"
+                        class="alert alert-danger">
+                        <div *ngIf="contact_tracing_fields['name'].errors['required']">
+                            Field is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Contact Date *</label>
+                    <!-- <span><input type="text" id="" name="Name" placeholder="06/10/2021"><i class="bi bi-calendar"></i></span> -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <input matInput [matDatepicker]="picker4" (click)="picker4.open()"
+                            formControlName="contactDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker touchUi #picker4></mat-datepicker>
+                    </mat-form-field>
+                    <div *ngIf="contact_tracing_fields['contactDate']?.touched && contact_tracing_fields['contactDate'].errors"
+                        class="alert alert-danger">
+                        <div *ngIf="contact_tracing_fields['contactDate'].errors['required']">
+                            Field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Direct Prolonged Contact by Team Members *</label>
+                    <select formControlName="dpcTm">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                    <div *ngIf="contact_tracing_fields['dpcTm']?.touched && contact_tracing_fields['dpcTm'].errors"
+                        class="alert alert-danger">
+                        <div *ngIf="contact_tracing_fields['dpcTm'].errors['required']">
+                            Field is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Type *</label>
+                    <select formControlName="type">
+                        <option> Team Member </option>
+                        <option> Family and Friends </option>
+                        <option> Vendors </option>
+                        <option> Commercial Accounts </option>
+                        <option> Suppliers </option>
+                    </select>
+                    <div *ngIf="contact_tracing_fields['type']?.touched && contact_tracing_fields['type'].errors"
+                        class="alert alert-danger">
+                        <div *ngIf="contact_tracing_fields['type'].errors['required']">
+                            Field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Comment</label>
+                    <textarea id="" name="" rows="4" cols="50" placeholder="Enter your comment"
+                        formControlName="comment"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-cancel-btn">
+            <button [routerLink]="['/dashboard']" name="">Cancel</button>
+            <button name="" class="hover-btn" (click)="save()">Save</button>
+            <button name="" class="hover-btn" (click)="save()">Contact Tracing Completed</button>
+            <mat-icon matTooltip="You must complete contact tracing for the person to return work"
+                matTooltipPosition="right" [ngStyle]="{'color':'grey'}">help</mat-icon>
+        </div>
+
+        <div class="inner-grid-box-shadow">
+            <h3>Contact Tracing</h3>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact Date</th>
+                        <th>Type</th>
+                        <th>Case Created</th>
+                        <th>Comments</th>
+                        <th>Last Modified</th>
+                        <!-- <th>Action</th> -->
+                    </tr>
+                </thead>
+                <tbody *ngFor="let caseTracing of this.commonService.contactTracings" >
+                    <tr>
+                        <td>{{ caseTracing | dataExtractor : "string" : "entries.1642579353917-1642579169209.1642579169209" }}</td>
+                        <td>{{ caseTracing | dataExtractor : "date" : "entries.1642579353915-1642579169209.1642579169209" }}</td>
+                        <td>{{ caseTracing | dataExtractor : "string" :  "entries.1642579353919-1642579169209.1642579169209" }}</td>
+                        <td>{{ caseTracing | dataExtractor : "date" :  "entries.1642579166839.attributes" }}</td>
+                        <td>{{ caseTracing | dataExtractor : "string" : "entries.1642579353913-1642579169209.1642579169209" }}</td>
+                        <td>{{ caseTracing | dataExtractor : "date" : "lastUpdated.date" }}</td>
+                        <!-- <td><a href="#">Edit</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

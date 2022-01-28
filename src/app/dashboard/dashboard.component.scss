@@ -1,0 +1,64 @@
+.dashboard_content_section{
+    width: calc(100% - 260px);
+    padding: 0px;
+    margin-left: 260px;
+    background: #F9FAFB;
+    height:calc(100% - 60px);
+    overflow: auto;
+    transition: 200ms all;
+    .content_heading_top{
+        width: 100%;
+        padding: 0px 0 0 20px;
+        font-size: 16px;
+        color: #1A1818;
+        background: #fff;
+        height: 40px;
+        line-height: 43px;
+        box-sizing: border-box;
+        display: table;
+        h3{
+            margin: 0px;
+        }
+    }
+    .middile_content{
+        padding: 20px 20px 0 20px; 
+        width: 100%;
+        box-sizing: border-box;
+        .my_cases_btn_section{
+            width: 100%;
+            ul{
+                margin: 0px; padding: 0px;display: inline-block;
+                li{
+                    list-style: none;
+                    display: inline-block;
+                    margin-right: 20px;
+                    a{
+                        border: 1px solid #A5B6CC;background: #fff;color:#1A1818; text-decoration: none; font-size: 16px;padding: 0px 25px;box-sizing: border-box;width: 100%;display: table; height: 53px; line-height: 53px;
+                        i{font-size: 22px;float: left;padding: 0 9px 0 0;}
+                        &:hover{color: #fff;background: #009250;border: 1px solid #009250;}
+                    }
+                    .buttonhover{color: #fff;background: #009250;border: 1px solid #009250;}
+                }
+            }
+            .add_new_case_btn{
+                float: right;margin-top: 8px;
+                a{
+                    background: #009250;
+                    color:#fff; 
+                    font-size: 16px;
+                    padding:0px 20px 0px 15px;
+                    display: table; 
+                    height: 42px; 
+                    line-height: 42px;
+                    text-decoration: none;
+                    i{font-size: 26px;float: left;padding: 0 5px 0 0;}
+                    &:hover{
+                        background: #00a75c;   
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}

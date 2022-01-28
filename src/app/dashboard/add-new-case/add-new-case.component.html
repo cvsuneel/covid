@@ -1,0 +1,8 @@
+<div class="add-new-case-bradcrum-sec" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="add-new-page-bradcrum">
+        <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" ><i class="bi bi-chevron-left"></i> Back</a> My Cases / Add New Case / NOT POSITIVE / SYMPTOMATIC QUESTIONNAIRE (NPSQ)
+    </div>
+    <app-form-i *ngIf="formNo == 1" (formSubmit)='onFormChange($event)' [_formType]="formType" [form1Data]="form1Data" [form2Data]="form2Data"></app-form-i>
+    <app-form-ii *ngIf="formNo == 2" (formSubmit)='onFormChange($event)' [formType]="formType" [form1Data]="form1Data" [form2Data]="form2Data"></app-form-ii>
+</div>
+

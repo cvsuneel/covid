@@ -1,0 +1,78 @@
+::ng-deep .mat-dialog-container {
+    display: block;
+    padding: 53px;
+    border-radius: 0;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    width: 790px;
+    height: 100%;
+    min-height: inherit;
+    max-height: inherit;
+    border: 1px solid #707070;
+    text-align: center;
+    position: relative;
+}
+.close{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    z-index: 9;
+    button{
+        border: 0px;
+        background: #fff;
+        font-size: 25px;
+        padding: 0px;
+        cursor: pointer;
+        &:hover{color: #2b9648;}
+    }
+}
+.popupgreenlinetop{
+    background: #2B9648;
+    width: 187px;
+    height: 6px;
+    display: inline-block;
+}
+h2{
+    padding: 20px 0 26px 0;
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px;
+    letter-spacing: 8px;
+    color: #4A4A4A;
+    font-family: "GTWalsheimPro-Bold";
+}
+.popup-content{
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    color: #4A4A4A;
+    line-height: 31px;
+    font-family: "GT Walsheim Pro Medium";
+}
+.popupback-to-home-btn{
+    width: 100%;
+    margin: 30px 0 0px 0;
+    display: table;
+    button{
+        border: 1px solid #008B43;
+        background: #008B43;
+        height: 49px;
+        padding: 0 20px;
+        min-width: 148px;
+        font-size: 16px;
+        color: #fff;
+        font-family: "GT Walsheim Pro Medium";
+        cursor: pointer;
+        box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+        i{margin-right: -6px;}
+        &:hover{
+            border: 1px solid #009e4c;
+            background: #009e4c;  
+            color: #fff;
+            
+        }
+    }
+}

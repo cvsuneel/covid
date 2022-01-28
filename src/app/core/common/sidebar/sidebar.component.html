@@ -1,0 +1,20 @@
+<!-- <mat-sidenav-container>
+    <mat-sidenav #drawer class="leftmenuslide" mode="side" [opened]="commonService.isShowing" role="navigation">
+        <ul>
+            <li><a routerLink="/dashboard" routerLinkActive="lefmenuthover"><i class="bi bi-file-earmark-text"></i> Dashboard</a></li>
+            <li><a><i class="bi bi-file-earmark-text"></i> Case History</a></li>
+        </ul>
+        <div class="left-perfeqtalogofixed"><img src="/assets/images/Perfeqta-Logo.png" alt="Perfeqta logo"></div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<div class="leftmenuslide" id="sidebar" [ngClass]="{'leftslidemar-none-copy': commonService.isShowing === false}">
+    <ul>
+        <li><a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="lefmenuthover"><i class="bi bi-file-earmark-text"></i> Dashboard</a></li>
+        <!-- <li><a href=""><i class="bi bi-file-earmark-text"></i> Case History</a></li> -->
+    </ul>  
+    <div class="left-perfeqtalogofixed"><img src="/assets/images/Perfeqta-Logo.png" alt="Perfeqta logo"></div>
+</div>   

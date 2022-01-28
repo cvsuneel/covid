@@ -1,0 +1,15 @@
+::ng-deep .mat-calendar-body-cell-content.mat-calendar-body-selected{
+    background-color: #2B9648 !important;
+    color: white !important;
+  }
+
+  .loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 
+              50% 50% no-repeat rgb(249,249,249);
+  }

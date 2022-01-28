@@ -1,0 +1,21 @@
+<app-header *ngIf="authService.getIsAuth && authService.getIsSSOAuth"></app-header>
+<app-sidebar *ngIf="authService.getIsAuth && authService.getIsSSOAuth"></app-sidebar>
+
+<div class="loader" *ngIf="commonService.showLoader"></div>
+
+<!-- <app-dashboard></app-dashboard> -->
+<!-- <app-footer></app-footer> -->
+<!-- <p>
+  Home page! <i class="bi-alarm"></i>
+
+</p>
+
+<div *ngIf="isAuth; else elseBlock"> <a routerLink="/section1">skip to section1</a>
+  <button type="button" (click)="handle_logout()">handle_logout</button>
+</div>
+<ng-template #elseBlock><a routerLink="/verify">verify</a></ng-template>
+
+<br />
+<span>{{ msg }}</span> -->
+
+<router-outlet></router-outlet>

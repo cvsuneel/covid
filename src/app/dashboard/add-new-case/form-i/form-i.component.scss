@@ -1,0 +1,216 @@
+.addnewcase1-maincontent{
+    padding: 0px 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+.tab-section-bx{
+    display: table;
+    width:100%;
+    text-align: center;
+    padding:20px 0 6px 0;
+    ul{
+        margin: 0px; padding: 0px;display: inline-block;
+        li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 20px;
+            a{
+                border: 1px solid #F9FAFB;
+                border-radius: 100px;
+                background: #F9FAFB;
+                color:#B0BED3; 
+                text-decoration: none; 
+                font-size:30px;
+                padding: 0px 0px;
+                width:40px;
+                display: table; 
+                height: 40px; 
+                line-height: 40px;
+                cursor: pointer;
+                &:hover{color: #fff;background: #009250;border: 1px solid #009250;}
+            }
+            .buttonhover{color: #fff;background: #009250;border: 1px solid #009250;}
+        }
+    }
+}
+.inner-grid-box-shadow {
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 23%);
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0px;
+    line-height: 54px;
+    font-size: 16px;
+    color:#1A1818;
+    margin: 15px 0 18px 0;
+    font-weight: 600;
+    background: #fff;
+    .paddingtop18{
+        padding-top: 18px !important;
+    }
+    .addnew_dropdownselect_Section {
+        padding: 0px 8px 0px 8px;
+        width: 100%;
+        box-sizing: border-box;
+        display:table;
+        .col-md-6 {
+            width: 50%;
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            .multipleSelectMenu{
+                height: 50px;
+                line-height: 46px;
+                border: 1px solid #B0BED3;
+                border-radius: 3px;
+                text-align: left;
+                color: #1E293B;
+                font-size: 16px;
+                width: 100%;
+                padding:0 10px 0 15px;
+                box-sizing: border-box;
+                font-family: "GT Walsheim Pro Medium";
+                margin-top: 1px;
+                ::ng-deep .mat-select-arrow{
+                    margin-top: 20px !important;
+                }
+            }
+            label {
+                width: 100%;
+                font-size: 14px;
+                color: #57697F;
+                padding: 0 0 2px 0;
+                display: block;
+                line-height: 20px;
+            }
+            span{
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                input{
+                    padding-left: 42px;
+                }
+                i{
+                    position: absolute;
+                    top: 0;
+                    left: 12px;
+                    z-index: 99;
+                    font-size: 22px;
+                    color: #009250;
+                    cursor: pointer;
+                }
+            }
+            select{
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #B0BED3;
+                background: #fff;
+                border-radius: 3px;
+                text-align: left;
+                color: #1E293B;
+                font-size: 16px;
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+                font-family: "GT Walsheim Pro Medium";
+            }
+            input{
+                height: 50px;
+                line-height: 50px;
+                border: 1px solid #B0BED3;
+                border-radius: 3px;
+                text-align: left;
+                color: #1E293B;
+                font-size: 16px;
+                width: 100%;
+                padding: 0 10px;
+                box-sizing: border-box;
+                font-family: "GT Walsheim Pro Medium";
+            }
+            textarea{
+                height: 110px;
+                line-height: 22px;
+                border: 1px solid #B0BED3;
+                border-radius: 3px;
+                text-align: left;
+                color: #1E293B;
+                font-size: 16px;
+                width: 100%;
+                padding: 8px 10px 5px 10px;
+                box-sizing: border-box;
+                font-family: "GT Walsheim Pro Medium";
+                resize: none;
+                display: block;
+            }
+        }
+    }
+    .lightgreenbox{
+        background: #EDFCF6;
+        height: 54px;
+        line-height: 54px;
+        text-align: left;
+        font-size: 16px;
+        color: #1A1818;
+        padding: 0 20px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #009250;
+    }
+}
+.bottom-cancel-btn{
+    width: 100%;
+    margin: 30px 0 15px 0;
+    display: table;
+    button{
+        border: 1px solid #008B43;
+        background: #fff;
+        height: 50px;
+        padding: 0 0px;
+        min-width: 130px;
+        font-size: 16px;
+        margin-right: 30px;
+        color: #1E293B;
+        font-family: "GT Walsheim Pro Medium";
+        cursor: pointer;
+        box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
+        i{margin-right: -6px;}
+        &:hover{
+            border: 1px solid #008B43;
+            background: #008B43;  
+            color: #fff;
+            
+        }
+    }
+    .hover-btn{
+        border: 1px solid #008B43;
+        background: #008B43;  
+        color: #fff;
+        
+    }
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .add-new-case-bradcrum-sec{
+        overflow:hidden;
+        display:inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .inner-grid-box-shadow .addnew_dropdownselect_Section .col-md-6{
+        width:100%; margin-bottom: 20px;
+    }
+    .inner-grid-box-shadow .addnew_dropdownselect_Section {
+        padding: 0px 8px 0px 8px;
+    }
+    .inner-grid-box-shadow .addnew_dropdownselect_Section .col-md-6 label{
+        padding: 0 0 2px 0;
+    }
+   
+}
+mat-form-field{
+    width: -webkit-fill-available;
+    }

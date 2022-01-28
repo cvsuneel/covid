@@ -1,0 +1,231 @@
+<div class="center">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<div class="dashboard_content_section" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="add-new-case-bradcrum-sec">
+        <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" class="router-link-active"><i class="bi bi-chevron-left"></i> Back</a> Dashboard / My Cases / Case Details - Josh Mark - Case ID 3242
+    </div>
+    <div class="middile_content">
+        <div class="my_cases_btn_section">
+            <ul>
+                <li><a [routerLink]="['/dashboard/case-details', encodedId ]"  class="buttonhover">Case Details</a></li>
+                <li><a [routerLink]="['/dashboard/contact-tracing', encodedId]" >Contact Tracing</a></li>
+                <li><a [routerLink]="['/dashboard/return-to-work', encodedId]" >Return to Work</a></li>
+                <li><a [routerLink]="['/dashboard/case-history', encodedId]" >Case History</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="addnewcase1-maincontent" *ngIf="schemaDetails && caseDetails">
+        <div class="inner-grid-box-shadow">
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18">
+                    <label>{{ schemaDetails.attributes[0]['title'] }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'attribute' : schemaDetails.attributes[0]['s#'] : 'attributes' }}</div>
+                </div>
+                <div class="col-md-6 paddingtop18">
+                    <label>{{ schemaDetails.attributes[1]['title'] }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'attribute' : schemaDetails.attributes[0]['s#'] : 'attributes' }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Basic Questions</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[1].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Affected TM’s Details</div>
+            <!-- <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <div class="viewmode-select-label">Josh Mark</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>TM Number</label>
+                    <div class="viewmode-select-label">ID02481</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Work Location</label>
+                    <div class="viewmode-select-label">Dallas, TX</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Designation</label>
+                    <div class="viewmode-select-label">Senior Logistics Executive</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Phone Number</label>
+                    <div class="viewmode-select-label">+1 214-821-5199</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <div class="viewmode-select-label">josh.m@oreillyauto.com</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>COVID Vaccine Received </label>
+                    <div class="viewmode-select-label">Yes</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Confirm Email</label>
+                    <div class="viewmode-select-label">josh.m@oreillyauto.com</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>What date did the TM receive the final dose of the vaccine?</label>
+                    <div class="viewmode-select-label">06/10/2021</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>What was the TM’s last day worked?</label>
+                    <div class="viewmode-select-label">06/17/2021</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Vaccine Manufacturer</label>
+                    <div class="viewmode-select-label">Pfizer</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>Has the TM worked at any location other than their base location in the last 14 days?</label>
+                    <div class="viewmode-select-label">No</div>
+                </div>
+            </div> -->
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[2].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Affected TM’s Symptoms</div>
+            <!-- <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>When did the TM become symptomatic?</label>
+                    <div class="viewmode-select-label">12/11/2021</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>What are the TM’s symptoms?</label>
+                    <div class="viewmode-select-label">Dallas, TX</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Did the TM work while symptomatic?</label>
+                    <div class="viewmode-select-label">Yes</div>
+                </div>
+    
+                <div class="col-md-6">
+                    <label>What dates did the TM work while symptomatic?</label>
+                    <div class="viewmode-select-label">12/13/2021</div>
+                </div>
+            </div> -->
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[3].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">COVID - 19 Testing Information</div>
+            <!-- <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>Has the TM been tested for COVID - 19?</label>
+                    <div class="viewmode-select-label">Yes</div>
+                </div>
+                <div class="col-md-6">
+                    <label>What date was the TM tested for COVID - 19?</label>
+                    <div class="viewmode-select-label">12/14/2021</div>
+                </div>
+            </div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6">
+                    <label>What were the test results?</label>
+                    <div class="viewmode-select-label">Positive</div>
+                </div>
+            </div> -->
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[4].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Direct Prolonged Contact (DPC) – Who Exposed the TM to the Virus</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[5].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Direct Prolonged Contact (DPC) – Who the Affected TM Came into DPC With After Exposure</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[6].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Company Protocols/Processes</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6 paddingtop18" *ngFor="let question of schemaDetails.procedures[7].questions">
+                    <label>{{ question.title }}</label>
+                    <div class="viewmode-select-label">{{ caseDetails | perfeqtaDataExtracter: 'procedureQuestion' : question['s#'] : question['parentId'] : question['fieldType']['name'] }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Attestation</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="checkboxwithlabel marginLeft10">
+                <mat-checkbox class="example-margin "></mat-checkbox>
+                <label for="vehicle3" class="viewmode-14"> By completing this COVID-19 questionnaire, I certify that I have read and understood all parts of it and certify that I have truthfully and completely answered all questions. I understand that any falsification or willful omissions can be grounds for immediate termination, regardless of when such falsification may be discovered.</label>
+                </div>
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <div class="viewmode-select-label">Lucas Wilson</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="longtextdotedcss">Date</label>
+                    <div class="viewmode-select-label">12/13/2021</div>
+                </div>
+            </div>
+        </div> -->
+    
+    
+        <!-- <div class="bottom-cancel-btn">
+            <button [routerLink]="['/dashboard']" name="">Cancel</button>
+            <button name="" class="hover-btn">Edit</button>
+        </div> -->
+    </div>
+</div>
+

@@ -1,0 +1,267 @@
+
+<div class="dashboard_content_section" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="add-new-case-bradcrum-sec">
+        <a href="dashboard" class="router-link-active"><i class="bi bi-chevron-left"></i> Back</a> Dashboard / My Cases / Return to Work - Josh Mark - Case ID 3242
+    </div>
+    <div class="middile_content">
+        <div class="my_cases_btn_section">
+            <ul>
+                <li><a [routerLink]="['/dashboard/case-details', encodedId ]"  class="buttonhover">Case Details</a></li>
+                <li><a [routerLink]="['/dashboard/contact-tracing', encodedId]" >Contact Tracing</a></li>
+                <li><a [routerLink]="['/dashboard/return-to-work', encodedId]" >Return to Work</a></li>
+                <li><a [routerLink]="['/dashboard/case-history', encodedId]" >Case History</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="addnewcase1-maincontent">
+        <div class="inner-grid-box-shadow">
+            <div class="lightgreenbox">Return to Work</div>
+            <div class="addnew_dropdownselect_Section">
+                <div class="col-md-6" *ngIf="conditions.question_1">
+                    <label>Did you test positive for Covid-19?</label>
+                    <select (change)="disp_other_que($event, 'question_1', 'question_2', 'question_3')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_2">
+                    <label>Were you symptomatic?</label>
+                    <select (change)="disp_other_que($event, 'question_2', 'question_4', 'question_5')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_3">
+                    <label>Were you quarantined for symptoms?</label>
+                    <select (change)="disp_other_que($event, 'question_3', 'question_6', 'question_7')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_4">
+                    <label>Has it been 10 days since symptoms 1st appeared?</label>
+                    <select (change)="disp_other_que($event, 'question_4', 'question_8', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_5">
+                    <label>Are you still symptom free?</label>
+                    <select (change)="disp_other_que($event, 'question_5', 'question_9', 'question_10')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_6">
+                    <label>Have you been exposed?</label>
+                    <select (change)="disp_other_que($event, 'question_6', 'question_11', 'question_12')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_7">
+                    <label>Were you quarantined due to DPC?</label>
+                    <select (change)="disp_other_que($event, 'question_7', 'question_13', 'CCT')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_8">
+                    <label>Have you been fever free for 24 hours w/o the aid of medicine?</label>
+                    <select (change)="disp_other_que($event, 'question_8', 'question_14', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_9">
+                    <label>Has it been 10 days since you were tested?</label>
+                    <select (change)="disp_other_que($event, 'question_9', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_10">
+                    <label>Collect Sypmtom Start Date</label>
+                    <input type="date" name="" id="" (change)="disp_other_que($event, 'question_10', 'question_15', '')">
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_11">
+                    <label>Was the exposure at work? </label>
+                    <select (change)="disp_other_que($event, 'question_11', 'CCT', 'question_18')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_12">
+                    <label>Has it been 10 days since your symptoms first appeared?</label>
+                    <select (change)="disp_other_que($event, 'question_12', 'question_23', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_13">
+                    <label>Was the exposure at work? </label>
+                    <select (change)="disp_other_que($event, 'question_13', 'CCT', 'question_25')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_14">
+                    <label>Have all other covid symptoms improved? (except loss of taste &/or smell)</label>
+                    <select (change)="disp_other_que($event, 'question_14', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_15">
+                    <label>Has it been 10 days since symptoms 1st appeared?</label>
+                    <select (change)="disp_other_que($event, 'question_15', 'question_16', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_16">
+                    <label>Have you been fever free for 24 hours w/o the aid of medicine?</label>
+                    <select (change)="disp_other_que($event, 'question_16', 'question_17', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_17">
+                    <label>Have all other covid symptoms improved? (except loss of taste &/or smell)</label>
+                    <select (change)="disp_other_que($event, 'question_17', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_18">
+                    <label>Were you exposed at home? </label>
+                    <select (change)="disp_other_que($event, 'question_18', 'question_19', 'question_20')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_19">
+                    <label>Has the infected individual in the home been released from isolation?</label>
+                    <select (change)="disp_other_que($event, 'question_19', 'question_21', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_20">
+                    <label>Has it been 14 days since DPC?</label>
+                    <select (change)="disp_other_que($event, 'question_20', 'question_22', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_21">
+                    <label>Has it been 14 days since the infected individual has been released from isolation?</label>
+                    <select (change)="disp_other_que($event, 'question_21', 'question_22', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_22">
+                    <label>Has it been 10 days since your symptoms first appeared?</label>
+                    <select (change)="disp_other_que($event, 'question_22', 'question_23', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_23">
+                    <label>Have you been fever free for 24 hours, without the aid of medicine?</label>
+                    <select (change)="disp_other_que($event, 'question_23', 'question_24', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_24">
+                    <label>Have all other Covid symptoms improved? (except loss of taste &/or smell)</label>
+                    <select (change)="disp_other_que($event, 'question_24', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_25">
+                    <label>Was it at home? </label>
+                    <select (change)="disp_other_que($event, 'question_25', 'question_26', 'question_27')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_26">
+                    <label>Has the infected individual in the home been released from isolation?</label>
+                    <select (change)="disp_other_que($event, 'question_26', 'question_28', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_27">
+                    <label>Has it been 10 days since the DPC occurred?</label>
+                    <select (change)="disp_other_que($event, 'question_27', 'ETOM', 'question_29')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_28">
+                    <label>Has it been 10 days since the infected individual was released from isolation?</label>
+                    <select (change)="disp_other_que($event, 'question_28', 'ETOM', 'question_30')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_29">
+                    <label>Has it been 7 days since the DPC occurred & been tested w/in 48 hours of day 7 with negative test results?</label>
+                    <select (change)="disp_other_que($event, 'question_29', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="conditions.question_30">
+                    <label>Has it been 7 days since the infected individual was released & you have been tested w/in 48 hours of day 7 with negative test results?</label>
+                    <select (change)="disp_other_que($event, 'question_30', 'ETOM', 'CRTW')">
+                        <option selected disabled>Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div class="bottom-cancel-btn">
+            <button [routerLink]="['/dashboard']" name="">Cancel</button>
+            <button name="" (click)="save()" *ngIf="ETOM" class="hover-btn">Save</button>
+        </div>
+    </div>
+
+</div>

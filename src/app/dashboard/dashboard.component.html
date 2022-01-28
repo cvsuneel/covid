@@ -1,0 +1,15 @@
+<div class="dashboard_content_section" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="content_heading_top"><h3>Dashboard</h3></div>
+    <div class="middile_content">
+        <div class="my_cases_btn_section">
+            <ul>
+                <li><a (click)="pageShowing='my-case'" [ngClass]="{'buttonhover': pageShowing == 'my-case' }"><i class="bi bi-person-fill"></i> My Cases</a></li>
+                <li><a (click)="pageShowing='my-teams-case'" [ngClass]="{'buttonhover': pageShowing == 'my-teams-case' }"><i class="bi bi-people-fill"></i> My Team’s Cases</a></li>
+            </ul>
+            <div class="add_new_case_btn" [routerLink]="['/dashboard/add-new-case']" routerLinkActive="router-link-active" ><a><i class="bi bi-plus"></i> Add New Case</a></div>
+        </div>
+    </div>
+
+    <app-my-cases *ngIf="pageShowing == 'my-case'"></app-my-cases>
+    <app-myteams-cases *ngIf="pageShowing == 'my-teams-case'"></app-myteams-cases>
+</div>

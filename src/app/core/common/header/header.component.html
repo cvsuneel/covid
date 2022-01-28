@@ -1,0 +1,49 @@
+<!-- <div class="header_main">
+    <div class="headerleftmenu" (click)="commonService.callMethodOfSecondComponent"><i class="bi bi-list"></i></div>
+    <div class="logo"><img src="/assets/images/o-reully-logo.png" alt="Logo"></div>
+    <div class="headerright">
+        <span><img src="/assets/images/header-profile-pic.png" alt="menu"></span>
+        <label>Supervisor</label>
+        <i class="bi bi-chevron-down"></i>
+    </div>
+</div> -->
+
+<!-- <mat-toolbar class="header_main">
+    <mat-toolbar-row>
+        <div class="headerleftmenu" (click)="commonService.toggleSideNav()"><i class="bi bi-list"></i></div>
+        <div class="logo"><img src="/assets/images/o-reully-logo.png" alt="Logo"></div>
+        <div class="headerright">
+            <span><img src="/assets/images/header-profile-pic.png" alt="menu"></span>
+            <label>Supervisor</label>
+            <i class="bi bi-chevron-down" [matMenuTriggerFor]="menu" #menuTrigger></i>
+            <mat-menu #menu="matMenu" class="header-rt-logoutdropdown">
+                <button mat-menu-item><i class="bi bi-person-fill"></i> Your Profile</button>
+                <button mat-menu-item><i class="bi bi-bell"></i> Notification</button>
+                <button mat-menu-item (click)="authService.signOut()"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+            </mat-menu>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<!-- <div class="header-rt-logoutdropdown">
+    <ul>
+        <li><a href="#"><i class="bi bi-person-fill"></i> Your Profile</a></li>
+        <li><a href="#"><i class="bi bi-bell"></i> Notification</a></li>
+        <li><a href="#"><i class="bi bi-box-arrow-in-right"></i> Logout</a></li>
+    </ul>
+</div> -->
+
+
+<div class="header_main">
+    <div class="headerleftmenu" id="toggle_btn" (click)="commonService.toggleSideNav()"><i class="bi bi-list"></i></div>
+    <div class="logo"><img src="/assets/images/o-reully-logo.png" alt="Logo"></div>
+    <div class="headerright">
+        <span><img src="/assets/images/header-profile-pic.png" alt="menu"></span>
+        <label>Supervisor</label>
+        <i class="bi bi-chevron-down" [matMenuTriggerFor]="menu" #menuTrigger></i>
+    </div>
+    <mat-menu #menu="matMenu" class="header-rt-logoutdropdown">
+        <button mat-menu-item><i class="bi bi-person-fill"></i> Your Profile</button>
+        <button mat-menu-item><i class="bi bi-bell"></i> Notification</button>
+        <button mat-menu-item (click)="authService.signOut()"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+    </mat-menu>
+</div>

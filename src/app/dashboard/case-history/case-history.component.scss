@@ -1,0 +1,155 @@
+.add-new-case-bradcrum-sec{
+    width: 100%;
+    padding: 0px 0 0 20px;
+    font-size: 16px;
+    color: #1A1818;
+    background: #fff;
+    height: 40px;
+    line-height: 43px;
+    box-sizing: border-box;
+    // margin-top: 60px;
+    a{
+        color: #009250; cursor: pointer;margin-right: 20px; text-decoration: none;
+        i{
+            font-size: 16px;
+            color: #009250;
+            padding-right: 2px;
+            line-height: 44px;
+            float: left;
+            margin-left: -3px;
+        }
+    }
+}
+
+.dashboard_content_section{
+    width: calc(100% - 260px);
+    padding: 0px;
+    margin-left: 260px;
+    background: #F9FAFB;
+    height:calc(100% - 60px);
+    overflow: auto;
+    transition: 200ms all;
+}
+.dashboard_content_section .middile_content {
+    padding: 20px 20px 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.dashboard_content_section .middile_content .my_cases_btn_section {
+    width: 100%;
+    ul{
+        margin: 0px; padding: 0px;display: inline-block;
+        li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 20px;
+            a{
+                border: 1px solid #A5B6CC;background: #fff;color:#1A1818; text-decoration: none; 
+                font-size: 16px;padding: 0px 25px;box-sizing: border-box;width: 100%;
+                display: table; height: 53px; line-height: 53px;cursor: pointer;
+                i{font-size: 22px;float: left;padding: 0 9px 0 0;}
+                &:hover{color: #fff;background: #009250;border: 1px solid #009250;}
+            }
+            .buttonhover{color: #fff;background: #009250;border: 1px solid #009250;}
+        }
+    }
+}
+
+.innerpagesmainbox {
+    margin: 0 20px;
+.inner-grid-box-shadow {
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 23%);
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0px;
+    line-height: 54px;
+    font-size: 16px;
+    color:#1A1818;
+    margin: 15px 0 18px 0;
+    font-weight: 600;
+    background: #fff;
+    h3 {
+        height: 54px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 15px;
+        line-height: 54px;
+        font-size: 16px;
+        color: #1A1818;
+        margin: 0px;
+        font-weight: 600;
+    }
+    .paddingtop18{
+        padding-top: 18px !important;
+    }
+    .lightgreenbox{
+        background: #EDFCF6;
+        height: 54px;
+        line-height: 54px;
+        text-align: left;
+        font-size: 16px;
+        color: #1A1818;
+        padding: 0 20px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #009250;
+    }
+    table {
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+        th {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1818;
+            padding: 15px 0px 15px 15px;
+            background: #f4f7fd;
+            line-height: 20px;
+            border-bottom: 1px solid #0049C1;
+        }
+        td {
+            font-size: 12px;
+            font-weight: 400;
+            color: #1a1818;
+            padding: 15px 0px 15px 15px;
+            margin: 0px;
+            line-height: 20px;
+            a {
+                border: 1px solid #2b9648;
+                height: 30px;
+                width:67px;
+                color: #2b9648;
+                text-decoration: none;
+                padding: 9px 22px;
+                background: #fff;
+                &:hover {
+                    border: 1px solid #1a1818;
+                    color: #1a1818;
+                }
+            }
+        }
+        tr:nth-child(even) {
+            background: #f4f7fd;
+        }
+        .positive_color {
+            color: #ea5858;
+        }
+        .negative_color {
+            color: #2b9648;
+        }
+    }
+}
+}
+
+.center {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+  }
+
+  ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #2B9648;
+}

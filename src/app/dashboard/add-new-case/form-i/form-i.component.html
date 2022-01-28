@@ -1,0 +1,350 @@
+<div class="addnewcase1-maincontent"  [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="tab-section-bx">
+        <ul>
+            <li><a class="buttonhover">1</a></li>
+            <li><a (click)="next()">2</a></li>
+        </ul>
+    </div>
+
+    <!-- Common - I -->
+    <div class="inner-grid-box-shadow">
+        <div class="addnew_dropdownselect_Section paddingtop18" [formGroup]="common1">
+            <div>
+                <div class="col-md-6">
+                    <label>Are you completing the questionnaire for yourself?</label>
+                    <select formControlName="AreYouCompletingTheQuestionnaireForYourself"
+                        (change)="common1FormAction()">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div *ngIf="common1Form['AreYouCompletingTheQuestionnaireForYourself']?.touched && common1Form['AreYouCompletingTheQuestionnaireForYourself'].errors"
+                        class="alert alert-danger">
+                        <div *ngIf="common1Form['AreYouCompletingTheQuestionnaireForYourself'].errors['required']">
+                            Field is required.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hide if you are submitting for yourself -->
+                <div class="col-md-6"
+                    *ngIf="conditions.common1_AreYouCompletingTheQuestionnaireForOneOfYourDirectReports">
+                    <label>Are you completing the questionnaire for one of your direct reports?</label>
+                    <select formControlName="AreYouCompletingTheQuestionnaireForOneOfYourDirectReports">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common - II -->
+    <div class="inner-grid-box-shadow">
+        <div class="lightgreenbox">Basic Questions</div>
+        <div class="addnew_dropdownselect_Section" [formGroup]="common2">
+            <div class="col-md-6">
+                <label>Have you tested positive for COVID - 19?</label>
+                <select id="1641476952968-1641476901564" formControlName="HaveYouTestedPositiveForCovid_19" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <div *ngIf="common2Form['HaveYouTestedPositiveForCovid_19']?.touched && common2Form['HaveYouTestedPositiveForCovid_19'].errors"
+                    class="alert alert-danger">
+                    <div *ngIf="common2Form['HaveYouTestedPositiveForCovid_19'].errors['required']">
+                        Field is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Were you exposed to someone who tested positive for COVID - 19?</label>
+                <select id="1641476968510-1641476901564" formControlName="WereYouExposedToSomeoneWhoTestedPositiveForCovid_19"
+                    (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <div *ngIf="common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19']?.touched && common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].errors"
+                    class="alert alert-danger">
+                    <div *ngIf="common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].errors['required']">
+                        Field is required.
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section" [formGroup]="common2">
+            <div class="col-md-6">
+                <label>Do you have symptoms?</label>
+                <select id="1641476968506-1641476901564" formControlName="DoYouHaveSymptoms" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <div *ngIf="common2Form['DoYouHaveSymptoms']?.touched && common2Form['DoYouHaveSymptoms'].errors"
+                    class="alert alert-danger">
+                    <div>
+                        Field is required.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"
+                *ngIf="common2Form['HaveYouTestedPositiveForCovid_19'].value && common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].value && common2Form['DoYouHaveSymptoms'].value">
+                <label>At work( Store/WFH)?</label>
+                <select id="1641476968504-1641476901564" formControlName="DirectPrologueContact" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section" [formGroup]="common2">
+            <div class="col-md-6"
+                *ngIf="common2Form['HaveYouTestedPositiveForCovid_19'].value && common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].value && common2Form['DoYouHaveSymptoms'].value && common2Form['DirectPrologueContact'].value">
+                <label>Do you live with the individual who tested positive?</label>
+                <select id="1641476968507-1641476901564" formControlName="DoYouLiveWithTheIndividualWhoTestedPositive" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="col-md-6"
+                *ngIf="common2Form['HaveYouTestedPositiveForCovid_19'].value && common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].value && common2Form['DoYouHaveSymptoms'].value && common2Form['DirectPrologueContact'].value && common2Form['DoYouLiveWithTheIndividualWhoTestedPositive'].value">
+                <label>Are you fully vaccinated?</label>
+                <select id="1641476968503-1641476901564" formControlName="AreYouFullyVaccinated" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section" [formGroup]="common2">
+            <div class="col-md-6"
+                *ngIf="common2Form['HaveYouTestedPositiveForCovid_19'].value && common2Form['WereYouExposedToSomeoneWhoTestedPositiveForCovid_19'].value && common2Form['DoYouHaveSymptoms'].value && common2Form['DirectPrologueContact'].value && common2Form['DoYouLiveWithTheIndividualWhoTestedPositive'].value && common2Form['AreYouFullyVaccinated'].value">
+                <label>Have you tested positive for COVID in the last 90 days?</label>
+                <select id="1641476968508-1641476901564" formControlName="HaveYouTestedPositiveForCovidInTheLast90Days" (change)="common2FormAction()">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section - I - Affected TM’s Identifying Information 
+        (NPSQ, PSQ, PSFQ, DWSQ, DWSFQ, DHSQ, DOSFVQ, DHSFQ, DOSQ, DOPPQ(4 new), DOSFQ ) - Question specific condition -->
+    <div class="inner-grid-box-shadow" [formGroup]="section1" *ngIf="formType || !formType">
+        <div class="lightgreenbox">Affected TM’s Details</div>
+        <div class="addnew_dropdownselect_Section">
+            <!-- 1641479193762 -->
+            <div class="col-md-6">
+                <label>Name</label>
+                <input type="text" id="1641479193762-1641479156103" name="Name" placeholder="Josh Mark" formControlName="name">
+            </div>
+            <!-- 1641479193766 -->
+            <div class="col-md-6">
+                <label>TM Number</label>
+                <input type="text" id="1641479193766-1641479156103" name="TM Number" placeholder="ID02481" formControlName="tmNumber">
+            </div>
+            <!-- 1641479193767 -->
+            <div class="col-md-6">
+                <label>Work Location</label>
+                <select id="1641479193767-1641479156103" formControlName="workLocation">
+                    <option>Dallas, TX</option>
+                    <option>No</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <!-- 1641479193764 -->
+            <div class="col-md-6">
+                <label>Designation</label>
+                <select id="1641479193764-1641479156103" formControlName="designation">
+                    <option>Senior Logistics Executive</option>
+                    <option>No</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <!-- 1641479193763 -->
+            <div class="col-md-6">
+                <label>Phone Number</label>
+                <input type="text" id="1641479193763-1641479156103" name="Phone Number" placeholder="+1 214-821-5199" formControlName="phone">
+            </div>
+            <!-- 1641479193760 -->
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="text" id="1641479193760-1641479156103" name="Email" placeholder="josh.m@oreillyauto.com" formControlName="email">
+            </div>
+            <!-- 1641479193755 -->
+            <div class="col-md-6">
+                <label>COVID Vaccine Received </label>
+                <select id="1641479193755-1641479156103" formControlName="CovidVaccineReceived">
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Prefer not to disclose</option>
+                </select>
+            </div>
+            <!-- this field is not added in api  -->
+            <div class="col-md-6">
+                <label>Confirm Email</label>
+                <input type="text" id="" name="Confirm Email" placeholder="josh.m@oreillyauto.com"
+                    formControlName="ConfirmEmail">
+            </div>
+            <!-- 1641479193759 -->
+            <div class="col-md-6">
+                <label>What date did the TM receive the final dose of the vaccine?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641479193759-1641479156103" matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Choose a Date" formControlName="WhatDateDidTheTmReceiveTheFinalDoseOfTheVaccine">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <!-- 1641479193768 -->
+            <div class="col-md-6">
+                <label>What was the TM’s last day worked?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641479193768-1641479156103" matInput [matDatepicker]="picker2" (click)="picker2.open()" placeholder="Choose a Date" formControlName="WhatWasTheTmsLastDayWorked">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <!-- 1641479193769 -->
+            <div class="col-md-6">
+                <label>Vaccine Manufacturer</label>
+                <select id="1641479193769-1641479156103" formControlName="VaccineManufacturer">
+                    <option>Pfizer</option>
+                    <option>Moderna</option>
+                    <option>Johnson & Johnson/Jansssen</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <!-- 1641892336252 -->
+            <div class="col-md-6">
+                <label>Has the TM worked at any location other than their base location in the last 14 days?</label>
+                <select id="1641892336252-1641479156103" formControlName="HasTheTmWorkedAtAnyLocationOtherThanTheirBaseLocationInTheLast14Days">
+                    <option>No</option>
+                    <option>Yes</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <!-- 1641892361813 -->
+            <div class="col-md-6">
+                <label>Has the TM visited other places in the last two weeks outside of work and home?</label>
+                <select id="1641892361813-1641479156103" formControlName="HasTheTmVisitedOtherPlacesInTheLastTwoWeeksOutsideOfWorkAndHome">
+                    <option>No</option>
+                    <option>Yes</option>
+                    <option>ABC</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- DOPPQ 4 new questions -->
+        <!-- 1641479193758 -->
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6" *ngIf="formType == 'DOPPQ' || formType || !formType">
+                <label>What date did the TM previously test positive for COVID - 19?</label>
+                <span>
+                    <input type="date" id="1641479193758-1641479156103" name="" placeholder=""
+                        formControlName="WhatDateDidTheTmPreviouslyTestPositiveForCovid_19">
+                    <i class="bi bi-calendar"></i>
+                </span>
+            </div>
+            <!-- 1641479193753 -->
+            <div class="col-md-6" *ngIf="formType == 'DOPPQ' || formType || !formType">
+                <label>Did the TM have symptoms during their prior COVID case?</label>
+                <select id="1641479193753-1641479156103" formControlName="DidTheTmHaveSymptomsDuringTheirPriorCovidCase">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="col-md-6" *ngIf="formType == 'DOPPQ' || formType || !formType">
+                <label for="" style="color: red;">These two questions will be used to calculate the 90 day window for
+                    the DPC Not at Work - Previously Tested Positive - Symptom Free RTW Email Response</label>
+            </div>
+            <!-- 1641479193756 -->
+            <div class="col-md-6" *ngIf="formType == 'DOPPQ' || formType || !formType">
+                <label>If/then logic: If the TM did have symptoms, what date did their symptoms start?</label>
+                <span>
+                    <input type="date" id="1641479193756-1641479156103" name="" placeholder="" formControlName="WhatDateDidTheirSymptomsStart">
+                    <i class="bi bi-calendar"></i>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section - II Affected TM's Symptoms 
+        (NPSQ, PSQ, DWSQ, DHSQ, DOSQ ) - No question specific condition -->
+    <div class="inner-grid-box-shadow" [formGroup]="section2"
+        *ngIf="formType || !formType || formType == 'NPSQ' || formType == 'PSQ' || formType == 'DWSQ' || formType == 'DHSQ' || formType == 'DOSQ'">
+        <div class="lightgreenbox">Affected TM’s Symptoms </div>
+        <div class="addnew_dropdownselect_Section">
+            <!-- 1641548834012 -->
+            <div class="col-md-6">
+                <label>When did the TM become symptomatic?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641548834012-1641801971477" matInput [matDatepicker]="picker3" (click)="picker3.open()" placeholder="Choose a Date" formControlName="WhenDidTheTmBecomeSymptomatic">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker3></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <!-- 1641548852241 -->
+            <div class="col-md-6">
+                <label>What are the TM’s symptoms?</label>
+                <!--<ng-multiselect-dropdown [settings]="dropdownSettings"
+                [data]="dropdownList"></ng-multiselect-dropdown>-->
+                <!-- <select formControlName="WhatAreTheTmsSymptoms">
+                    <option>Dallas, TX</option>
+                    <option>No</option>
+                    <option>Other</option>
+                </select> -->
+                <mat-form-field class="example-full-width multipleSelectMenu" appearance="outline">
+                    <mat-select id="1641548852241-1641801971477" formControlName="WhatAreTheTmsSymptoms" multiple>
+                        <mat-option value="Congestion"> Congestion </mat-option>
+                        <mat-option value="runny nose"> runny nose </mat-option>
+                        <mat-option value="cough"> cough </mat-option>
+                        <mat-option value="diarrhea"> diarrhea </mat-option>
+                        <mat-option value="fatigue"> fatigue </mat-option>
+                        <mat-option value="muscle/body aches"> muscle/body aches </mat-option>
+                        <mat-option value="fever"> fever </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- 1641548863455 -->
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Did the TM work while symptomatic?</label>
+                <select id="1641548863455-1641801971477" formControlName="DidTheTmWorkWhileSymptomatic">
+                    <option>Yes</option>
+                    <option>No</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <!-- 1641548871063 -->
+            <div class="col-md-6">
+                <label>What dates did the TM work while symptomatic?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641548871063-1641801971477" matInput [matDatepicker]="picker4" (click)="picker4.open()" placeholder="Choose a Date" formControlName="WhatDatesDidTheTmWorkWhileSymptomatic">
+                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker4></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- 1641548964210 -->
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Why did the TM work while symptomatic?</label>
+                <textarea id="1641548964210-1641801971477" name="" rows="4" cols="50"
+                    placeholder="New product arrived in the store that day and had to be arranged"
+                    formControlName="WhyDidTheTmWorkWhileSymptomatic"></textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-cancel-btn">
+        <button name="" [routerLink]="['/']" routerLinkActive="router-link-active">Cancel</button>
+        <button name="" class="hover-btn" (click)="next()">Next <i class="bi bi-chevron-right"></i></button>
+    </div>
+</div>

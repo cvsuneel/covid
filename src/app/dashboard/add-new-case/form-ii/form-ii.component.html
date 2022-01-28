@@ -1,0 +1,359 @@
+<div class="addnewcase1-maincontent">
+    <div class="tab-section-bx">
+        <ul>
+            <li><a (click)="prev()">1</a></li>
+            <li><a class="buttonhover">2</a></li>
+        </ul>
+    </div>
+
+    <!-- Section - III - COVID - 19 Testing Information	
+        ( NPSQ, PSQ~2, PSFQ(PSQ) ) - Question specific condition -->
+    <div class="inner-grid-box-shadow" [formGroup]="section3" *ngIf="formType == 'NPSQ' || formType == 'PSQ' || formType == 'PSFQ' || formType || !formType">
+        <div class="lightgreenbox">COVID - 19 Testing Information</div>
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6" *ngIf="formType == 'NPSQ' || formType == 'PSQ' || formType == 'PSFQ' || formType || !formType">
+                <label>Has the TM been tested for COVID - 19?</label>
+                <select id="1641549009824-1641802015038" formControlName="HasTheTmBeenTestedForCovid_19">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-md-6" *ngIf="formType == 'NPSQ' || formType == 'PSQ' || formType == 'PSFQ' || formType || !formType">
+                <label>What date was the TM tested for COVID - 19?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641549025711-1641802015038" matInput [matDatepicker]="picker5" (click)="picker5.open()" placeholder="Choose a Date" formControlName="WhatDateWasTheTmTestedForCovid_19">
+                    <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker5></mat-datepicker>
+                  </mat-form-field>
+                <!-- <span>
+                    <input type="text" id="" name="" placeholder="12/14/2021">
+                <span>
+                    <input type="date" id="" name="" placeholder="" formControlName="WhatDateWasTheTmTestedForCovid_19">
+                    <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- PSQ new question -->
+            <div class="col-md-6" *ngIf="formType == 'PSQ' || formType == 'PSFQ' || formType || !formType">
+                <label>What date did the TM receive notification of the test results?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641549017677-1641802015038" matInput [matDatepicker]="picker6" (click)="picker6.open()" placeholder="Choose a Date" formControlName="WhatDateDidTheTmReceiveNotificationOfTheTestResults_19">
+                    <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker6></mat-datepicker>
+                </mat-form-field>
+                <!-- <span>
+                    <input type="date" id="" name="" placeholder="" formControlName="WhatDateDidTheTmReceiveNotificationOfTheTestResults_19">
+                    <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+            <div class="col-md-6" *ngIf="formType == 'PSQ' || formType == 'PSFQ' || formType || !formType">
+                <label>Has the TM worked at any location other than their base location in the last 14 days?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641549035377-1641802015038" matInput [matDatepicker]="picker7" (click)="picker7.open()" placeholder="Choose a Date" formControlName="HasTheTmWorkedAtAnyLocationOtherThanTheirBaseLocationInTheLast14Days">
+                    <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker7></mat-datepicker>
+                </mat-form-field>
+                <!-- <span>
+                    <input type="date" id="" name="" placeholder="" formControlName="HasTheTmWorkedAtAnyLocationOtherThanTheirBaseLocationInTheLast14Days">
+                    <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+            </div>
+            <!-- End PSQ new question -->
+
+            <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6" *ngIf="formType == 'NPSQ' || formType == 'PSQ' || formType == 'PSFQ' ">
+                <label>What were the test results?</label>
+                <select id="1641549044079-1641802015038" formControlName="WhatWereTheTestResults">
+                    <option>Positive</option>
+                    <option>Negative</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section (new - IV) - Direct Prolonged Contact (DPC) – Who Exposed the TM to the Virus 
+        ( DWSQ, DWSFQ, DHSQ( 5 common from DWSQ & 9 new ), DOSFVQ, DHSFQ(DHSQ), DOSQ, DOPPQ, DOSFQ )  - - Question specific condition -->
+    <div class="inner-grid-box-shadow" [formGroup]="section4" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ' || formType || !formType">
+        <div class="lightgreenbox">Direct Prolonged Contact (DPC) – Who Exposed the TM to the Virus</div>
+        <div class="addnew_dropdownselect_Section">
+            <!-- Old -->
+            <div class="col-md-6" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ' || formType || !formType">
+                <label>Has the TM come into DPC (within 6 feet for a cumulative total of 15 minutes or more over a 24-hour period) with an individual who tested positive for COVID-19? </label>
+                <select id="1641549096388-1641802202192" formControlName="HasTheTmComeIntoDpc_within6FeetForACumulativeTotalOf15MinutesOrMoreOverA24hourPeriod_WithAnIndividualWhoTestedPositiveForCovid_19">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>What date did the infected individual test positive?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641549156477-1641802202192" matInput [matDatepicker]="picker8" (click)="picker8.open()" placeholder="Choose a Date" formControlName="WhatDateDidTheInfectedIndividualTestPositive">
+                    <mat-datepicker-toggle matSuffix [for]="picker8"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker8></mat-datepicker>
+                </mat-form-field>
+                <!-- <span>
+                <input type="date" id="" name="Name" placeholder="" formControlName="WhatDateDidTheInfectedIndividualTestPositive">
+                <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- Old -->
+            <div class="col-md-6" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ' || formType || !formType">
+                <label>What is the TM's relationship to the person they were exposed to? </label>
+                <select id="1641549108198-1641802202192" formControlName="WhatIsTheTmsRelationshipToThePersonTheyWereExposedTo">
+                    <option>Team member</option>
+                    <option>relative</option>
+                    <option>spouse/significant other</option>
+                    <option>individual</option>
+                </select>
+            </div>
+            <!-- Old -->
+            <div class="col-md-6" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ' || formType || !formType">
+                <label>What date did the TM come into DPC with the virus?</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641549114963-1641802202192" matInput [matDatepicker]="picker9" (click)="picker9.open()" placeholder="Choose a Date" formControlName="WhatDateDidTheTmComeIntoDpcWithTheVirus">
+                    <mat-datepicker-toggle matSuffix [for]="picker9"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker9></mat-datepicker>
+                </mat-form-field>
+                <!-- <span>
+                <input type="date" id="" name="Name" placeholder="" formControlName="WhatDateDidTheTmComeIntoDpcWithTheVirus">
+                <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- Old -->
+            <div class="col-md-6" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ'">
+                <label>How did the TM come into DPC with the virus? </label>
+                <select id="1641549125646-1641802202192" formControlName="HowDidTheTmComeIntoDpcWithTheVirus">
+                    <option>At home</option>
+                    <option>At work</option>
+                    <option>outside of work but not at home</option>
+                </select>
+            </div>
+            <!-- Old -->
+            <div class="col-md-6" *ngIf="formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ' || formType == 'DHSFQ' || formType == 'DOSQ' || formType == 'DOPPQ' || formType == 'DOSFQ' || formType || !formType">
+                <label>Does the TM live with the individual who tested positive?   </label>
+                <select id="1641549137196-1641802202192" formControlName="DoesTheTmLiveWithTheIndividualWhoTestedPositive">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM able to isolate outside of the home?   </label>
+                <select id="1641549164718-1641802202192" formControlName="IsTheTmAbleToIsolateOutsideOfTheHome">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Has the TM had any contact with the individual who tested positive after the positive diagnosis was received?</label>
+                <select id="1641549649713-1641802202192" formControlName="HasTheTmHadAnyContactWithTheIndividualWhoTestedPositiveAfterThePositiveDiagnosisWasReceived">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM staying in a separate room from the infected individual?</label>
+                <select id="1641549660584-1641802202192" formControlName="IsTheTmStayingInASeparateRoomFromTheInfectedIndividual">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM utilizing a separate bathroom from the infected individual?</label>
+                <select id="1641549703606-1641802202192" formControlName="IsTheTmUtilizingASeparateBathroomFromTheInfectedIndividual">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the infected individual quarantined to their own room and not interacting with any other members of the household or pets?</label>
+                <select id="1641549753066-1641802202192" formControlName="IsTheInfectedIndividualQuarantinedToTheirOwnRoomAndNotInteractingWithAnyOtherMembersOfTheHouseholdOrPets">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM sharing personal household items (cups, towels, utensils) with the infected individual?  </label>
+                <select id="1641549765470-1641802202192" formControlName="IsTheTmSharingPersonalHouseholdItems_cups_Towels_Utensils_WithTheInfectedIndividual">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM preparing/bringing food to the infected individual and as a result, coming into contact with said individual and/or the utensils/plates/cups being utilized by the infected individual?   </label>
+                <select id="1641549778334-1641802202192" formControlName="IsTheTmPreparing_bringingFoodToTheInfectedIndividualAndAsAResult_ComingIntoContactWithSaidIndividualAnd_orTheUtensils_plates_cupsBeingUtilizedByTheInfectedIndividual">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <!-- New -->
+            <div class="col-md-6" *ngIf="formType == 'DHSQ' || formType == 'DHSFQ' || formType || !formType">
+                <label>Is the TM the caregiver for the infected individual (ex: child/parent relationship)? </label>
+                <select id="1641549793887-1641802202192" formControlName="IsTheTmTheCaregiverForTheInfectedIndividual">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section (new - V) - Direct Prolonged Contact (DPC) – Who the Affected TM Came into DPC With after Exposure
+        ( PSQ, PSFQ, DWSQ, DWSFQ, DHSQ, DOSFVQ, DHSFQ, DOSQ, DOPPQ, DOSFQ )  - No question specific condition --> 
+    <div class="inner-grid-box-shadow" [formGroup]="section5" *ngIf="formType == 'PSQ' || formType == 'PSFQ' || formType == 'DWSQ' || formType == 'DWSFQ' || formType == 'DHSQ' || formType == 'DOSFVQ'|| formType == 'DHSFQ'|| formType == 'DOSQ'|| formType == 'DOPPQ'|| formType == 'DOSFQ' || formType || !formType">
+        <div class="lightgreenbox">Direct Prolonged Contact (DPC) – Who the Affected TM Came into DPC With after Exposure</div>
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Has the TM come into DPC (within 6 feet for a cumulative total of 15 minutes or more over a 24-hour period) with any team members in the 48 hours before they became symptomatic through your last day worked? </label>
+                <select id="1641549864669-1641802240743" formControlName="HasTheTmComeIntoDpc_within6FeetForACumulativeTotalOf15MinutesOrMoreOverA24hourPeriod_WithAnyTeamMembersInThe48HoursBeforeTheyBecameSymptomaticThroughYourLastDayWorked">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Please list the name(s) and date(s) of the individuals the TM came into DPC with including family and friends who work for O'Reilly Auto Parts.</label>
+                <textarea id="1641550018862-1641802240743" name="" rows="4" cols="50" placeholder="New product arrived in the store that day and had to be arranged" formControlName="PleaseListTheNamesAndDatesOfTheIndividualsTheTmCameIntoDpcWithIncludingFamilyAndFriendsWhoWorkForOreillyAutoParts"></textarea>
+            </div>
+            </div>
+
+
+            <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Has the TM come into DPC (within 6 feet for a cumulative total of 15 minutes or more over a 24-hour period) with any vendors in the 48 hours before they became symptomatic through your last day worked? </label>
+                <select id="1641550064648-1641802240743" formControlName="HasTheTmComeIntoDpc_within6FeetForACumulativeTotalOf15MinutesOrMoreOverA24hourPeriod_WithAnyVendorsInThe48HoursBeforeTheyBecameSymptomaticThroughYourLastDayWorked">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Please list the name(s) and date(s) of the vendors the TM came into DPC with.</label>
+                <textarea id="1641550084835-1641802240743" name="" rows="4" cols="50" placeholder="New product arrived in the store that day and had to be arranged" formControlName="PleaseListTheNamesAndDateOfTheVendorsTheTmCameIntoDpcWith"></textarea>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Has the TM come into DPC (within 6 feet for a cumulative total of 15 minutes or more over a 24-hour period) with any commercial accounts in the 48 hours before they became symptomatic through your last day worked? </label>
+                <select id="1641550108766-1641802240743" formControlName="HasTheTmComeIntoDpc_within6FeetForACumulativeTotalOf15MinutesOrMoreOverA24hourPeriod_WithAnyCommercialAccountsInThe48HoursBeforeTheyBecameSymptomaticThroughYourLastDayWorked">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Please list the name(s) and date(s) of the commercial accounts the TM came into DPC with.</label>
+                <textarea id="1641550125589-1641802240743" name="" rows="4" cols="50" placeholder="New product arrived in the store that day and had to be arranged" formControlName="PleaseListTheNamesAndDatesOfTheCommercialAccountsTheTmCameIntoDpcWith"></textarea>
+            </div>
+            </div>
+
+            <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Has the TM come into DPC (within 6 feet for a cumulative total of 15 minutes or more over a 24-hour period) with any suppliers in the 48 hours before they became symptomatic through your last day worked? </label>
+                <select id="1641550205175-1641802240743" formControlName="HasTheTmComeIntoDpc_within6FeetForACumulativeTotalOf15MinutesOrMoreOverA24hourPeriod_WithAnySuppliersInThe48HoursBeforeTheyBecameSymptomaticThroughYourLastDayWorked">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Please list the name(s) and date(s) of the suppliers the TM came into DPC with.</label>
+                <textarea id="1641550213970-1641802240743" name="" rows="4" cols="50" placeholder="New product arrived in the store that day and had to be arranged" formControlName="PleaseListTheNameAndDateOfTheSuppliersTheTmCameIntoDpcWith"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section - VI - Company Protocols/Processes	
+        ( NPSQ, PSQ, PSFQ, DWSQ, DWSFQ, DHSQ, DOSFVQ, DHSFQ, DOSQ, DOPPQ, DOSFQ ) - - No question specific condition-->
+    <div class="inner-grid-box-shadow" [formGroup]="section6">
+        <div class="lightgreenbox">Company Protocols/Processes</div>
+        <div class="addnew_dropdownselect_Section">
+            <div class="col-md-6">
+                <label>Are the prescreening procedures in place at the work location?</label>
+                <div class="checkboxwithlabel paddingbottomnone">
+                    <strong>
+                    <mat-radio-group id="1641550301719-1641802277927" aria-label="Select an option" formControlName="AreThePrescreeningProceduresInPlaceAtTheWorkLocation">
+                        <mat-radio-button value="Yes">Yes</mat-radio-button>
+                        <mat-radio-button value="No">No</mat-radio-button>
+                    </mat-radio-group>
+                    </strong>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="longtextdotedcss">Are the team members at this location following the Company’s mask and cleaning protocols?</label>
+                <div class="checkboxwithlabel paddingbottomnone">
+                    <strong>
+                    <mat-radio-group id="1641550309254-1641802277927" aria-label="Select an option" formControlName="AreTheTeamMembersAtThisLocationFollowingTheCompanysMaskAndCleaningProtocols">
+                        <mat-radio-button value="Yes">Yes</mat-radio-button>
+                        <mat-radio-button value="No">No</mat-radio-button>
+                    </mat-radio-group>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section - VII -->
+    <div class="inner-grid-box-shadow" [formGroup]="section7">
+        <div class="lightgreenbox">Attestation</div>
+        <div class="addnew_dropdownselect_Section">
+            <div class="checkboxwithlabel marginLeft10">
+            <mat-checkbox id="1641550315522-1641802277927" class="example-margin " formControlName="declarationCheckbox"></mat-checkbox>
+            <label for="vehicle3"> By completing this COVID-19 questionnaire, I certify that I have read and understood all parts of it and certify that I have truthfully and completely answered all questions. I understand that any falsification or willful omissions can be grounds for immediate termination, regardless of when such falsification may be discovered.</label>
+            </div>
+            <div class="col-md-6">
+                <label>Name</label>
+                <input type="text" id="1641826209922-1641802277927" name="" placeholder="Lucas Wilson" formControlName="name">
+            </div>
+            <div class="col-md-6">
+                <label class="longtextdotedcss">Date</label>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <!-- <mat-label>Choose a date</mat-label> -->
+                    <input id="1641826229885-1641802277927" matInput [matDatepicker]="picker10" (click)="picker10.open()" placeholder="Choose a Date" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker10"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker10></mat-datepicker>
+                  </mat-form-field>
+                <!-- <span>
+                    <input type="text" id="" name="" placeholder="12/13/2021">
+                <span>
+                    <input type="date" id="" name="" placeholder="" formControlName="date">
+                    <i class="bi bi-calendar"></i>
+                </span> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-cancel-btn">
+        <button name="" (click)="prev()"><i class="bi bi-chevron-left"></i> Previous</button>
+        <button name="" (click)="save()" class="hover-btn">Save</button>
+    </div>
+</div>

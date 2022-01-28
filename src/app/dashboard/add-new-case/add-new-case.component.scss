@@ -1,0 +1,41 @@
+.add-new-case-bradcrum-sec{
+    width: calc(100% - 260px);
+    padding: 0px;
+    margin-left: 260px;
+    background: #F9FAFB;
+    height:calc(100% - 60px);
+    overflow: auto;
+    transition: 200ms all;
+    a{
+        color: #009250; cursor: pointer;margin-right: 20px; text-decoration: none;
+        display: inline-block;
+        padding-top: 12px;
+        i{
+            font-size: 16px;
+            color: #009250;
+            padding-right: 2px;
+            line-height: 20px;
+            float: left;
+            margin-left: -3px;
+        }
+    }
+}
+
+.add-new-page-bradcrum {
+    display: table;
+    width: 100%;
+    padding-left: 20px;
+    background: #fff;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .add-new-case-bradcrum-sec{
+        overflow:hidden;
+        display:inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0px 12px 0 20px;
+    }
+}

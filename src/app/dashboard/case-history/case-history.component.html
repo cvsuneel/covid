@@ -1,0 +1,48 @@
+<div class="center">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<div class="dashboard_content_section" [ngClass]="{'leftslidemar-none': commonService.isShowing === false}">
+    <div class="add-new-case-bradcrum-sec">
+        <a href="dashboard" class="router-link-active"><i class="bi bi-chevron-left"></i> Back</a> Dashboard / My Cases / Case History - Josh Mark - Case ID 3242
+    </div>
+    <div class="middile_content">
+        <div class="my_cases_btn_section">
+            <ul>
+                <li><a [routerLink]="['/dashboard/case-details', encodedId ]">Case Details</a></li>
+                <li><a [routerLink]="['/dashboard/contact-tracing', encodedId]" >Contact Tracing</a></li>
+                <li><a [routerLink]="['/dashboard/return-to-work', encodedId]" >Return to Work</a></li>
+                <li><a [routerLink]="['/dashboard/case-history', encodedId]"  class="buttonhover">Case History</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="innerpagesmainbox">
+      <div class="inner-grid-box-shadow">
+          <h3>Case History</h3>
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Field Name</th>
+                <th>Modified By</th>
+                <th>IP Address</th>
+                <th>Date & Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let history of caseHistory">
+                <td>{{ history.title }}</td>
+                <td>{{ history.modifiedBy?.firstname }} {{ history.modifiedBy?.lastname }} - {{ history.modifiedBy?.department }}</td>
+                <td>{{ history.ip }}</td>
+                <td>{{ history.modifiedDate | date:'short' }}</td>
+              </tr>
+              <!-- <tr>
+                  <td>Case ID: 38475, Contact Tracing Completed By Adam Smith</td>
+                  <td>Adam Smith</td>
+                  <td>49.34.60.13</td>
+                  <td>12/14/2021 10:25:35</td>
+                </tr> -->
+            </tbody>
+          </table>
+        </div>
+  </div>
+</div>

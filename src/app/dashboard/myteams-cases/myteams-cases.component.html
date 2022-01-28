@@ -1,0 +1,78 @@
+<div class="center">
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+<div class="innerpagesmainbox" *ngIf="!isLoading">
+  <div class="inner-grid-box-shadow">
+    <div class="Myteamscases_Search_Section">
+      <div class="col-md-6">
+        <label>Case Search</label>
+        <div class="casesearchbox">
+          <i class="bi bi-search"></i><input type="text" id="" name="Search Text"
+            placeholder="Search by Case ID, TM Number, Name, Case Status, Test Result, Last Modified by, City">
+          <button class="searchbutton" type="button" name="Search">Search</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label>Start Date</label>
+        <mat-form-field appearance="outline">
+          <input placeholder="Choose Start Date" (click)="picker.open()" [max]="endDate.value" [formControl]="startDate" matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-3">
+        <label>End Date</label>
+        <mat-form-field appearance="outline">
+          <input placeholder="Choose End Date" (click)="picker2.open()" [min]="startDate.value" [formControl]="endDate" matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="inner-grid-box-shadow">
+    <h3>My Team’s Cases</h3>
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th *ngFor="let displayCol of displayedColumns">{{ displayCol['title'] }}</th>
+          <th>City, State</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of dataSource | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+          <td  style="width: 10%;" (click)="viewCaseDetails( doc._id )" *ngFor="let col of displayedColumns"> 
+            {{ doc | perfeqtaDataExtracter: col['methodName'] : col['s#'] : col['parentId'] }}
+          </td>
+          <td  (click)="viewCaseDetails( doc._id )" >
+            {{ doc | perfeqtaDataExtracter: 'address' }}
+          </td>
+          <!-- <td><a href="#/dashboard/return-to-work">Return to Work</a></td> -->
+          <td *ngIf="shouldShowContactTracing" (click)="onContactTracingClick( doc )"><a>Contact Tracing</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="grid-pagination-div">
+      <label><span>Results displayed per page:</span>
+        <select [(ngModel)]="itemsPerPage">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        </label>
+        <div class="right-sec">
+          <span>
+            <em>Showing 1 to 10 of</em>
+            <em>Total 120 Apps</em>
+          </span>
+          <div class="pagination"><pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls></div>
+        </div>
+    </div>
+  </div>
+</div>
